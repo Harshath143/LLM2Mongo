@@ -1,0 +1,42 @@
+{
+  "query": "List products launched after January 1, 2022, in the Home & Kitchen or Sports categories with a discount of 10% or more.",
+  "mongodb_query": {
+    "Category": {
+      "$in": ["Home & Kitchen", "Sports"]
+    },
+    "LaunchDate": {
+      "$gte": "2022-01-01T00:00:00.000Z"
+    },
+    "Discount": {
+      "$gte": 0.10
+    }
+  },
+  "results": [
+    {
+      "_id": "6837002e8264cee68ed05060",
+      "ProductID": 104,
+      "ProductName": "Running Shoes",
+      "Category": "Sports",
+      "Price": 49.99,
+      "Rating": 4.3,
+      "ReviewCount": 500,
+      "Stock": 200,
+      "Discount": "20%",
+      "Brand": "Nike",
+      "LaunchDate": "2022-02-10 00:00:00"
+    }
+    {
+      "_id": "6837002e8264cee68ed05064",
+      "ProductID": 108,
+      "ProductName": "Yoga Mat",
+      "Category": "Sports",
+      "Price": 29.99,
+      "Rating": 4.4,
+      "ReviewCount": 320,
+      "Stock": 300,
+      "Discount": "15%",
+      "Brand": "Manduka",
+      "LaunchDate": "2022-01-05 00:00:00"
+    }
+  ]
+}
