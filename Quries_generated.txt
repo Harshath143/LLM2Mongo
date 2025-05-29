@@ -1,0 +1,163 @@
+# Test case : 1
+{
+    "query": "Find all products with a rating below 4.5 that have more than 200 reviews and are offered by the brand 'Nike' or 'Sony'",
+    "mongodb_query": {
+        "Rating": {
+            "$lt": 4.5
+        },
+        "ReviewCount": {
+            "$gt": 200
+        },
+        "$or": [
+            {
+                "Brand": "Nike"
+            },
+            {
+                "Brand": "Sony"
+            }
+        ]
+    },
+    "results": [
+        {
+            "_id": "6837002e8264cee68ed05060",
+            "ProductID": 104,
+            "ProductName": "Running Shoes",
+            "Category": "Sports",
+            "Price": 49.99,
+            "Rating": 4.3,
+            "ReviewCount": 500,
+            "Stock": 200,
+            "Discount": "20%",
+            "Brand": "Nike",
+            "LaunchDate": "2022-02-10 00:00:00"
+        }
+    ]
+}
+
+
+# Test case : 2
+
+{
+    "query": "Which products in the Electronics category have a rating of 4.5 or higher and are in stock?",
+    "mongodb_query": {
+        "Category": "Electronics",
+        "Rating": {
+            "$gte": 4.5
+        },
+        "Stock": {
+            "$gt": 0
+        }
+    },
+    "results": [
+        {
+            "_id": "6837002e8264cee68ed0505d",
+            "ProductID": 101,
+            "ProductName": "Wireless Mouse",
+            "Category": "Electronics",
+            "Price": 25.99,
+            "Rating": 4.5,
+            "ReviewCount": 200,
+            "Stock": 150,
+            "Discount": "10%",
+            "Brand": "Logitech",
+            "LaunchDate": "2022-01-15 00:00:00"
+        },
+        {
+            "_id": "6837002e8264cee68ed0505e",
+            "ProductID": 102,
+            "ProductName": "Gaming Keyboard",
+            "Category": "Electronics",
+            "Price": 75.49,
+            "Rating": 4.7,
+            "ReviewCount": 350,
+            "Stock": 85,
+            "Discount": "5%",
+            "Brand": "Corsair",
+            "LaunchDate": "2021-11-20 00:00:00"
+        },
+        {
+            "_id": "6837002e8264cee68ed0505f",
+            "ProductID": 103,
+            "ProductName": "Noise Cancelling Headphones",
+            "Category": "Electronics",
+            "Price": 199.99,
+            "Rating": 4.8,
+            "ReviewCount": 125,
+            "Stock": 60,
+            "Discount": "15%",
+            "Brand": "Sony",
+            "LaunchDate": "2021-09-05 00:00:00"
+        },
+        {
+            "_id": "6837002e8264cee68ed05061",
+            "ProductID": 105,
+            "ProductName": "Smartwatch",
+            "Category": "Electronics",
+            "Price": 159.99,
+            "Rating": 4.6,
+            "ReviewCount": 220,
+            "Stock": 45,
+            "Discount": "10%",
+            "Brand": "Apple",
+            "LaunchDate": "2022-03-30 00:00:00"
+        },
+        {
+            "_id": "6837002e8264cee68ed05065",
+            "ProductID": 109,
+            "ProductName": "Smart TV",
+            "Category": "Electronics",
+            "Price": 399.99,
+            "Rating": 4.7,
+            "ReviewCount": 150,
+            "Stock": 25,
+            "Discount": "15%",
+            "Brand": "Samsung",
+            "LaunchDate": "2022-06-10 00:00:00"
+        }
+    ]
+}
+
+# Test Case : 3
+
+{
+  "query": "List products launched after January 1, 2022, in the Home & Kitchen or Sports categories with a discount of 10% or more.",
+  "mongodb_query": {
+    "Category": {
+      "$in": ["Home & Kitchen", "Sports"]
+    },
+    "LaunchDate": {
+      "$gte": "2022-01-01T00:00:00.000Z"
+    },
+    "Discount": {
+      "$gte": 0.10
+    }
+  },
+  "results": [
+    {
+      "_id": "6837002e8264cee68ed05060",
+      "ProductID": 104,
+      "ProductName": "Running Shoes",
+      "Category": "Sports",
+      "Price": 49.99,
+      "Rating": 4.3,
+      "ReviewCount": 500,
+      "Stock": 200,
+      "Discount": "20%",
+      "Brand": "Nike",
+      "LaunchDate": "2022-02-10 00:00:00"
+    }
+    {
+      "_id": "6837002e8264cee68ed05064",
+      "ProductID": 108,
+      "ProductName": "Yoga Mat",
+      "Category": "Sports",
+      "Price": 29.99,
+      "Rating": 4.4,
+      "ReviewCount": 320,
+      "Stock": 300,
+      "Discount": "15%",
+      "Brand": "Manduka",
+      "LaunchDate": "2022-01-05 00:00:00"
+    }
+  ]
+}
