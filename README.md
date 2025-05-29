@@ -22,7 +22,7 @@ This Python application converts **natural language queries** into **MongoDB fil
 ```
 project/
 │
-├── query_assistant.py         # Main script
+├── query_assistant.ipynb      # Main script
 ├── README.md                  # Documentation
 ├── requirements.txt           # Required Python packages
 ```
@@ -68,7 +68,7 @@ Ensure your MongoDB server is running locally and contains the following:
 
 Run the assistant script:
 ```bash
-python query_assistant.py
+python query_assistant.ipynb
 ```
 
 Example interaction:
